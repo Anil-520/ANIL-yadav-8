@@ -35,19 +35,6 @@ To install antivirus software, perform a full system scan, and ensure the comput
 - Before scan screenshot (Dashboard)  
 - After scan screenshot (Results)  
 
-## ❓ Interview Q&A
-**Q1:** Why is antivirus important?  
-**A1:** To detect and remove malware that can steal data or harm the system.  
-
-**Q2:** What’s the difference between quick scan and full scan?  
-**A2:** Quick scan checks common infection areas, full scan checks the entire system.  
-
-**Q3:** Can antivirus detect all threats?  
-**A3:** No, but it reduces risks significantly.  
-
-**Q4:** What is real-time protection?  
-**A4:** Continuous monitoring that blocks malware as soon as it appears.  
-
 ## ✅ Outcome
 System scan completed successfully, no major threats found. Gained practical knowledge of antivirus usage and system protection.
 
