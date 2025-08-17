@@ -1,21 +1,70 @@
 # ANIL-yadav-8
 Identify and Remove Suspicious Browser Extesion 
 
+       Antivirus Installation & System Scan
+
+Intern: Your Name  
+Batch: Elevate Lab Internship  
+
+## 📖 Description
+This task was about installing antivirus software, scanning the system for threats, and documenting the results. It helps in protecting the computer from malware, viruses, and security risks.
+
+## 📂 Files in this Repo
+- `Task6_Antivirus_Report.md` → Detailed explanation of the task  
+- `scan_script.py` → Example Python script for file scanning (optional learning)  
+
+## ✅ Outcome
+- Antivirus installed successfully  
+- Full system scan completed  
+- Threats removed/quarantined (if any)
+
+     Antivirus Installation & System Scan
+
+## 🛠 Objective
+To install antivirus software, perform a full system scan, and ensure the computer is free from threats.
+
+## 🔎 Steps
+1. Downloaded and installed **[Antivirus Name: Windows Defender / Avast / Quick Heal]**.  
+2. Updated antivirus definitions.  
+3. Performed a **Quick Scan** first.  
+4. Performed a **Full Scan** of the system.  
+5. Checked the report for detected threats.  
+6. Removed/quarantined malicious files if found.  
+
+## 📸 Screenshots
+- Before scan screenshot (Dashboard)  
+- After scan screenshot (Results)  
+
+## ❓ Interview Q&A
+**Q1:** Why is antivirus important?  
+**A1:** To detect and remove malware that can steal data or harm the system.  
+
+**Q2:** What’s the difference between quick scan and full scan?  
+**A2:** Quick scan checks common infection areas, full scan checks the entire system.  
+
+**Q3:** Can antivirus detect all threats?  
+**A3:** No, but it reduces risks significantly.  
+
+**Q4:** What is real-time protection?  
+**A4:** Continuous monitoring that blocks malware as soon as it appears.  
+
+## ✅ Outcome
+System scan completed successfully, no major threats found. Gained practical knowledge of antivirus usage and system protection.
+
+
 import os
-import json
 
-# Path to Chrome extensions (Windows)
-chrome_ext_path = os.path.expanduser(
-    r'~\AppData\Local\Google\Chrome\User Data\Default\Extensions'
-)
+Define suspicious file extensions (for demo)
+suspicious_ext = [".exe", ".bat", ".vbs", ".scr"]
 
-if os.path.exists(chrome_ext_path):
-    print("Installed Extensions:\n")
-    for ext_id in os.listdir(chrome_ext_path):
-        manifest_path = os.path.join(chrome_ext_path, ext_id, "manifest.json")
-        if os.path.exists(manifest_path):
-            with open(manifest_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                print(f"- {data.get('name', 'Unknown')} | Version: {data.get('version', 'N/A')}")
-else:
-    print("Chrome extensions folder not found.")
+def scan_directory(path):
+    print(f"Scanning directory: {path}\n")
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if file.lower().endswith(tuple(suspicious_ext)):
+                print(f"[!] Suspicious file found: {os.path.join(root, file)}")
+    print("\n✅ Scan complete!")
+
+# Example: scan current folder
+scan_directory(".")
+
